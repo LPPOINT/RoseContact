@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 3b6691e5d371f37429dc00dd630a1bc3
+timeCreated: 1429892749
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: roundedn_nofill
+    21300002: close
+    21300004: sound_enable
+    21300006: rounded_nofill_thin
+    21300008: restore_p
+    21300010: sound_disable
+    21300012: achivments
+    21300014: leaderboard
+    21300016: tip1
+    21300018: tip2
+    21300020: tip3
+    21300022: tap_icon
+    21300024: icon_tap_2
+    21300026: pause
+    21300028: eye
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: roundedn_nofill
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1702
+        width: 323
+        height: 319
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: close
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1671
+        width: 218
+        height: 330
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sound_enable
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1739
+        width: 283
+        height: 236
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rounded_nofill_thin
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1358
+        width: 322
+        height: 321
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: restore_p
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 1684
+        width: 365
+        height: 318
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sound_disable
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1485
+        width: 300
+        height: 225
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: achivments
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 1586
+        width: 410
+        height: 417
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leaderboard
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1223
+        width: 427
+        height: 425
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tip1
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 0
+        width: 661
+        height: 669
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tip2
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 11
+        width: 709
+        height: 657
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tip3
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 694
+        width: 637
+        height: 524
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tap_icon
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 66
+        width: 148
+        height: 187
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icon_tap_2
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 31
+        width: 337
+        height: 426
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pause
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 858
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eye
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 704
+        width: 617
+        height: 409
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

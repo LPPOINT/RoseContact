@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: ade27b3a192224c4db3baea3d5a9cbac
+timeCreated: 1429990486
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: play_and_score
+    21300002: play
+    21300004: solid
+    21300006: borders
+    21300008: bottom_buttons_outher
+    21300010: icon_settings
+    21300012: icon_border
+    21300014: icon_twitter
+    21300016: icon_facebook
+    21300018: icon_about
+    21300020: icon_cup
+    21300022: go_content
+    21300024: gameover_top_ribbon_body
+    21300026: rate_button
+    21300028: ribbon_play
+    21300030: ribbon_play_back
+    21300032: ribbon_back
+    21300034: gameover_content_cap
+    21300036: ribbon_rate
+    21300038: gameover_content_bg
+    21300040: gameover_bestscore_bg
+    21300042: social_bg
+    21300044: icon_facebook
+    21300046: gameover_bestscore
+    21300048: mm_top_border
+    21300050: icon_info
+    21300052: icon_close
+    21300054: icon_vk
+    21300056: button_capsule
+    21300058: borders_tl
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: solid
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 3227
+        width: 513
+        height: 507
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: go_content
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 3646
+        width: 1342
+        height: 341
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 11, y: 8, z: 5, w: 13}
+    - name: gameover_top_ribbon_body
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 676
+        width: 2762
+        height: 914
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ribbon_play
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1827
+        width: 3247
+        height: 553
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gameover_content_cap
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 3108
+        width: 1547
+        height: 370
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ribbon_rate
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 2509
+        width: 3243
+        height: 571
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gameover_content_bg
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 3896
+        width: 949
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gameover_bestscore_bg
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 200
+        width: 1371
+        height: 397
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: social_bg
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 3387
+        width: 361
+        height: 358
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icon_facebook
+      rect:
+        serializedVersion: 2
+        x: 3579
+        y: 2912
+        width: 201
+        height: 400
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gameover_bestscore
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 3841
+        width: 936
+        height: 217
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mm_top_border
+      rect:
+        serializedVersion: 2
+        x: 3396
+        y: 3411
+        width: 456
+        height: 451
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icon_settings
+      rect:
+        serializedVersion: 2
+        x: 3529
+        y: 2302
+        width: 391
+        height: 389
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icon_twitter
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 1651
+        width: 476
+        height: 421
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icon_info
+      rect:
+        serializedVersion: 2
+        x: 3799
+        y: 1215
+        width: 96
+        height: 214
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icon_close
+      rect:
+        serializedVersion: 2
+        x: 3578
+        y: 641
+        width: 416
+        height: 409
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icon_vk
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 170
+        width: 400
+        height: 229
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: button_capsule
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 212
+        width: 974
+        height: 374
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 126, y: 108, z: 124, w: 113}
+    - name: borders_tl
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 473
+        width: 126
+        height: 113
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

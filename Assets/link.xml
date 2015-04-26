@@ -1,0 +1,8 @@
+<linker>
+	<assembly fullname="UnityEngine">
+		<type fullname="UnityEngine.WWW" preserve="all" />
+	</assembly>
+  <assembly fullname="UnityEngine">
+    <type fullname="UnityEngine.TouchScreenKeyboard" preserve="all"/>
+  </assembly>
+</linker>

@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: f494407987f8e764f9bbc5baea91f416
+timeCreated: 1429806316
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: circle
+    21300002: player
+    21300004: symbol_batman
+    21300006: symbol_yin_yang_1
+    21300008: symbol_yin_yang_2
+    21300010: symbol_radiation
+    21300012: symbol_heart
+    21300014: bg_star
+    21300016: Game_0
+    21300018: Game_1
+    21300020: Game_2
+    21300022: plus_one
+    21300024: powerup_2
+    21300026: symbol_1
+    21300028: symbol_2
+    21300030: symbol_3
+    21300032: symbol_4
+    21300034: arrow
+    21300036: score_line
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Game_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1196
+        width: 771
+        height: 808
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Game_1
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1422
+        width: 271
+        height: 268
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Game_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 14
+        width: 957
+        height: 809
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plus_one
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 1835
+        width: 171
+        height: 170
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: powerup_2
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 1841
+        width: 187
+        height: 184
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: symbol_1
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 448
+        width: 381
+        height: 378
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: symbol_2
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 443
+        width: 262
+        height: 329
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: symbol_3
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 31
+        width: 379
+        height: 368
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: symbol_4
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 35
+        width: 333
+        height: 331
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arrow
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 875
+        width: 309
+        height: 213
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: score_line
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 1743
+        width: 373
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
