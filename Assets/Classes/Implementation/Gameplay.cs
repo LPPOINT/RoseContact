@@ -93,6 +93,17 @@ namespace Assets.Classes.Implementation
             return RaycastWithCurrentPointerEventData(graphicRaycaster);
         }
 
+        public IEnumerable<RaycastResult> Raycast(GraphicRaycaster raycaster, PointerEventData ped)
+        {
+
+
+            if (ped == null)
+                return new List<RaycastResult>();
+            var res = new List<RaycastResult>();
+            raycaster.Raycast(ped, res);
+
+            return res;
+        }
 
 
 
@@ -527,21 +538,12 @@ namespace Assets.Classes.Implementation
 
         public bool IsPointerOverPauseButton(FingerDownEvent g)
         {
-            return isPointerOverPauseButton;
-            //if (g.Selection == null)
-            //{
-            //    Debug.Log("Return");
-            //    return false;
-            //}
+            var ped = new PointerEventData(EventSystem.current);
+            ped.position = new Vector2(g.Position.x, g.Position.y);
+            
+            var res = Raycast(graphicRaycaster, ped);
 
-
-
-            //Debug.Log("CheckRaycast " + g.Raycast.GameObject);
-            //return g.Selection.Equals(UIScorePanel.gameObject);
-
-            var res = RaycastWithCurrentPointerEventData();
-
-            return res.Any(result => result.gameObject.Equals(UIPause.gameObject));
+            return res.Any(result => result.gameObject.Equals(UIPausePressArea.gameObject));
         }
 
         public const string GamePausedEventName = "GamePaused";
@@ -569,6 +571,7 @@ namespace Assets.Classes.Implementation
         public Ease PauseHoldHideEase = Ease.InBack;
 
         public Image UIPause;
+        public Button UIPausePressArea;
         public Image UIPausePopup;
         public Image UIPausePopupEye;
 
@@ -576,6 +579,18 @@ namespace Assets.Classes.Implementation
         private float defaultTimeScale;
         private float defaultPausePopupAlpha;
 
+        public bool CanPause
+        {
+            get
+            {
+                return IsEnabled
+                       && !isPausing
+                       && UIPause.transform.localScale.x != 0
+                       && UIPause.color.a != 0
+                       && !IsPaused
+                       && Benjamin.Instance.CurrentState != Benjamin.State.Dying;
+            }
+        }
 
         private void InitializePause()
         {
@@ -611,17 +626,14 @@ namespace Assets.Classes.Implementation
 
         public void Pause()
         {
-            if( !IsEnabled
-                || isPausing 
-                || UIPause.transform.localScale.x == 0 
-                || UIPause.color.a == 0
-                || IsPaused 
-                || Benjamin.Instance.CurrentState == Benjamin.State.Dying) 
-                    return;
+            if(!CanPause) 
+                return;
+
             IsPaused = true;
             isPausing = true;
             Time.timeScale = 0;
             ShowPausePopup();
+
             GameMessenger.Broadcast(GamePausedEventName);
         }
         public void Resume()
@@ -696,7 +708,6 @@ namespace Assets.Classes.Implementation
             Time.timeScale = defaultTimeScale;
             GameMessenger.Broadcast(GameResumedEventName);
         }
-
         private void OnPausePopupShowed()
         {
             isPausing = false;

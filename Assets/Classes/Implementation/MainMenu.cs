@@ -21,6 +21,7 @@ namespace Assets.Classes.Implementation
         private Vector3 cameraInitialPosition;
 
         private bool isShowingAnimationComplete;
+        private bool isFirstUpdateInvoked;
         private bool isPlayClicked;
         private bool isHowToPlayWasShowed;
 
@@ -74,7 +75,7 @@ namespace Assets.Classes.Implementation
 
         public void OnPlayHit()
         {
-            if(isPlayClicked || !isShowingAnimationComplete)
+            if(isPlayClicked || !isShowingAnimationComplete || !isFirstUpdateInvoked)
                 return;
 
             isPlayClicked = true;
@@ -269,6 +270,7 @@ namespace Assets.Classes.Implementation
 
         protected override void UpdateState()
         {
+            isFirstUpdateInvoked = true;
             Gameplay.Instance.UpdateChunks();
             base.UpdateState();
         }

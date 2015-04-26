@@ -9,7 +9,6 @@ using Assets.Classes.Foundation.Classes;
 using DG.Tweening;
 using SmartLocalization;
 using Soomla.Store;
-using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Classes.Core
@@ -96,16 +95,16 @@ namespace Assets.Classes.Core
             LastSessionStartDate = Database.GetDate(LastSessionStartDateDbKey);
             LastSessionEndDate = Database.GetDate(LastSessionEndDateDbKey);
 
-            if (!Database.ContainsKey(LastSessionVersionDbKey))
-            {
-                OnGameVersionChanged(string.Empty, PlayerSettings.bundleVersion);
-            }
-            else if(PlayerSettings.bundleVersion != Database.GetString(LastSessionVersionDbKey))
-            {
-                OnGameVersionChanged(LastSessionVersionDbKey, PlayerSettings.bundleVersion);
-            }
+            //if (!Database.ContainsKey(LastSessionVersionDbKey))
+            //{
+            //    OnGameVersionChanged(string.Empty, PlayerSettings.bundleVersion);
+            //}
+            //else if(PlayerSettings.bundleVersion != Database.GetString(LastSessionVersionDbKey))
+            //{
+            //    OnGameVersionChanged(LastSessionVersionDbKey, PlayerSettings.bundleVersion);
+            //}
 
-            Database.SetString(LastSessionVersionDbKey, PlayerSettings.bundleVersion);
+            //Database.SetString(LastSessionVersionDbKey, PlayerSettings.bundleVersion);
 
             if (LastSessionStartDate != null && LastSessionEndDate != null)
             {
@@ -127,6 +126,7 @@ namespace Assets.Classes.Core
         #region Untiy callbacks
         protected override void Awake()
         {
+           // Screen.SetResolution(1920, 1080, false);
             OnPreGameInitialized();
 
 
