@@ -13,7 +13,7 @@ namespace Assets.Classes.Foundation.Classes
     {
 
         public int Power = 1;
-        public string Path = @"C:\RoseContactCommon\Screenshots\";
+        public string Path = @"C:\RoseContactCommon\ScreenshotsSource\";
         public string CustomName;
 
         public KeyCode Hotkey = KeyCode.F12;

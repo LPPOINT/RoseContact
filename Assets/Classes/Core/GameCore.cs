@@ -126,7 +126,7 @@ namespace Assets.Classes.Core
         #region Untiy callbacks
         protected override void Awake()
         {
-           // Screen.SetResolution(1920, 1080, false);
+            //Screen.SetResolution(1952, 2928, false);
             OnPreGameInitialized();
 
 

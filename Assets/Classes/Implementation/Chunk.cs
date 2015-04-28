@@ -157,6 +157,8 @@ namespace Assets.Classes.Implementation
 
         private void SetupDebugGizmos()
         {
+            isWithDebugGizmos = false;
+            return;
             isWithDebugGizmos = true;
             bottomLine = VectorLine.SetLine(Color.blue, new Vector3(GameCamera.Instance.Viewport.xMin, BottomMiddle.y, -20.3f),
                 new Vector3(GameCamera.Instance.Viewport.xMax, BottomMiddle.y, -20.3f));
