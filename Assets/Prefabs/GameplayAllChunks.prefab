@@ -93,15 +93,15 @@ MonoBehaviour:
   UITapToPlay: {fileID: 0}
   TapToPlayHided: {fileID: 0}
   TapToPlayShowed: {fileID: 0}
-  TapToPlayShowTime: 0
-  TapToPlayShowEase: 0
-  TapToPlayHideTime: 0
-  TapToPlayHideEase: 0
+  TapToPlayShowTime: .5
+  TapToPlayShowEase: 27
+  TapToPlayHideTime: .300000012
+  TapToPlayHideEase: 26
   ScorePanelHided: {fileID: 0}
   ScorePanelShowed: {fileID: 0}
   ScorePanelShowTime: .5
   ScorePanelShowEase: 27
-  ScorePanelHideTime: .400000006
+  ScorePanelHideTime: .600000024
   ScorePanelHideEase: 26
   ScorePanelNumberScaleTrigger: NumberScale
   ChunksPrefabs:
@@ -124,6 +124,7 @@ MonoBehaviour:
   - {fileID: 11485522, guid: 83797f95d21ed594ab2ed60fddea2af0, type: 2}
   - {fileID: 11485522, guid: 4d4c5bc097eefb84db9c20ce39303879, type: 2}
   - {fileID: 11485522, guid: f2cad455f245b0a46a6e7d1717df46d9, type: 2}
+  - {fileID: 11485522, guid: 144e0fdc90b5b514d93c26e3c6da862b, type: 2}
   - {fileID: 11445890, guid: 235d39c9c8491514faef51c0360c706f, type: 2}
   - {fileID: 11451406, guid: aef6fc96d17e63b4aa8790338ed4f6c9, type: 2}
   - {fileID: 11451406, guid: db51f438513af6443a130d6be6f464a6, type: 2}
@@ -153,17 +154,30 @@ MonoBehaviour:
   - {fileID: 11451406, guid: 95bdb75c4438c944187bee23465e9d5f, type: 2}
   - {fileID: 11451406, guid: a8fdbfc22697d2a459e9b1a5612c3556, type: 2}
   - {fileID: 11451406, guid: bc3e13d850d76b54889c71d9e915311b, type: 2}
-  - {fileID: 11451406, guid: fff82c6946349c64dac13943273d70d9, type: 2}
   - {fileID: 11451406, guid: 92b6e34d4667c7242b73416aa49ce680, type: 2}
   - {fileID: 11451406, guid: 481d549db87bdcb4aac4b3b28f331f54, type: 2}
   - {fileID: 11451406, guid: d6cc83cf7298aef489a057d126e3252d, type: 2}
   - {fileID: 11451406, guid: 1e67a95f9401d874f81112de83aa249e, type: 2}
+  - {fileID: 11451406, guid: 0955714d494b20d4ea64b6babb0e484c, type: 2}
+  - {fileID: 11451406, guid: 377ab3e90eb486140921d8d707a67618, type: 2}
+  - {fileID: 11451406, guid: 6545856360600994ebdc7947bb670430, type: 2}
+  - {fileID: 11451406, guid: e22f585a8ced41c45ba728b2aa7cffa8, type: 2}
+  - {fileID: 11451406, guid: f8338abe3c22e814880d2dc159496457, type: 2}
+  - {fileID: 11451406, guid: b24dd58355dc48f46932854688fc3060, type: 2}
+  - {fileID: 11451406, guid: 89f5705095b9b834dbf82f536ed69a60, type: 2}
+  - {fileID: 11451406, guid: ab9d9d55f91d4f64dae25f5f8bdc3b8e, type: 2}
+  - {fileID: 11451406, guid: 7a0a6785b40ef064d9ffbe1c8d42e5f9, type: 2}
   InitialChunksPrefabs:
   - {fileID: 11496354, guid: 70c137da1c5e9dd4ea507494fe38b610, type: 2}
-  ScoreLineMaterial: {fileID: 0}
+  - {fileID: 11496354, guid: 129120e44097e4b4b9753dd569eb1148, type: 2}
+  - {fileID: 11496354, guid: 7b1b5505000821c4f9aa956f4bdccd28, type: 2}
+  - {fileID: 11496354, guid: 926880c65dff0a643a63e88c1195196e, type: 2}
+  - {fileID: 11496354, guid: 2cc3ccf275337f54692d3970f08b6424, type: 2}
+  ScoreLineMaterial: {fileID: 2100000, guid: 138f54dbcab9d5f4fa87cc3ced61119c, type: 2}
   ChunkPoolSize: 0
   FirstChunkSpawnOffset: 0
   ChunkToTest: {fileID: 0}
+  InputLockTime: .300000012
   UIPauseTapToResume: {fileID: 0}
   UIPauseHold: {fileID: 0}
   PauseTapToResumeHided: {fileID: 0}

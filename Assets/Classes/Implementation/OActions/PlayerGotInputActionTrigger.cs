@@ -12,14 +12,14 @@ namespace Assets.Classes.Implementation.OActions
 
         protected override void Awake()
         {
-            GameMessenger.AddListener(Gameplay.PlayerGotInputEventName, OnPlayerGotInput);
+            GameMessenger.AddListener(Gameplay.PlayerGotInputPartiallyEventName, OnPlayerGotInput);
             base.Awake();
         }
 
 
         private void OnDestroy()
         {
-            GameMessenger.RemoveListener(Gameplay.PlayerGotInputEventName, OnPlayerGotInput);
+            GameMessenger.RemoveListener(Gameplay.PlayerGotInputPartiallyEventName, OnPlayerGotInput);
         }
     }
 }

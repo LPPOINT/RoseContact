@@ -11,7 +11,7 @@ namespace Assets.Classes.Implementation
 
         public static string GCLeaderboardId = "com.rose.contact.leaderboard";
 
-        public static string AppStoreURL = "itms://itunes.apple.com/us/app/apple-store/id982772237?mt=8";
+        public static string AppStoreURL = "itms://itunes.apple.com/app/apple-store/id982772237?mt=8";
 
 
         public static string UnityAdsAppId = "32785";

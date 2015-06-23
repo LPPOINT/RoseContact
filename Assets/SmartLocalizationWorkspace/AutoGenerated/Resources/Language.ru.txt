@@ -120,7 +120,8 @@
 		<value>Коснись, чтобы начать</value>
 	</data>
 	<data name="Go.Facebook" xml:space="preserve">
-		<value>Ебать игра охуенна! Набрал {0} очков</value>
+		<value>I scored {0} in Trajectory Control! Can you beat me? 
+https://itunes.apple.com/app/trajectory-control/id982772237</value>
 	</data>
 	<data name="Go.Gameover" xml:space="preserve">
 		<value>ИГРА ОКОНЧЕНА</value>
@@ -141,22 +142,26 @@
 		<value>Поделиться</value>
 	</data>
 	<data name="Go.Twitter" xml:space="preserve">
-		<value>Ебать игра охуенна! Набрал {0} очков</value>
+		<value>I scored {0} in Trajectory Control! Can you beat me? 
+https://itunes.apple.com/app/trajectory-control/id982772237</value>
 	</data>
 	<data name="HighscoreBanner.BestScore" xml:space="preserve">
 		<value>Рекорд:</value>
 	</data>
 	<data name="HowToPlay.Back" xml:space="preserve">
-		<value>НАЗАД</value>
+		<value>Н А З А Д</value>
 	</data>
 	<data name="HowToPlay.Play" xml:space="preserve">
-		<value>ИГРАТЬ</value>
+		<value>И Г Р А Т Ь !</value>
 	</data>
 	<data name="MainMenu.BestScore" xml:space="preserve">
 		<value>РЕКОРД: {0}</value>
 	</data>
 	<data name="MainMenu.HowToPlay" xml:space="preserve">
 		<value>КАК ИГРАТЬ?</value>
+	</data>
+	<data name="MainMenu.Loading" xml:space="preserve">
+		<value>ЗАГРУЗКА...</value>
 	</data>
 	<data name="MainMenu.Rate" xml:space="preserve">
 		<value>ОЦЕНИТЬ</value>
@@ -168,7 +173,7 @@
 		<value>{0}</value>
 	</data>
 	<data name="MainMenu.TapToPlay" xml:space="preserve">
-		<value>НАЖМИ ЧТОБЫ НАЧАТЬ</value>
+		<value>Н А Ж М И  Ч Т О Б Ы   Н А Ч А Т Ь</value>
 	</data>
 	<data name="Pause.Hold" xml:space="preserve">
 		<value>ЗАЖАТЬ</value>
@@ -186,18 +191,18 @@
 		<value>Восстановить покупки</value>
 	</data>
 	<data name="Settings.SoundDisabled" xml:space="preserve">
-		<value>ЗВУК ВЫКЛЮЧЕН</value>
+		<value>Звук выключен</value>
 	</data>
 	<data name="Settings.SoundEnabled" xml:space="preserve">
-		<value>ЗВУК ВКЛЮЧЕН</value>
+		<value>Звук включен</value>
 	</data>
 	<data name="Tips.1" xml:space="preserve">
-		<value>Нажми на экран чтобы сменить траекторию движения</value>
+		<value>Касайся экрана, чтобы менять траекторию движения и обходить препятствия.</value>
 	</data>
 	<data name="Tips.2" xml:space="preserve">
-		<value>Пересекай красные линии чтобы повысить счет</value>
+		<value>Пересекай линии чтобы набирать счет.</value>
 	</data>
 	<data name="Tips.3" xml:space="preserve">
-		<value>Выйди из игровой зоны чтобы телепортироваться на другую сторону</value>
+		<value>Выйди из игровой зоны чтобы телепортироваться на другую сторону.</value>
 	</data>
 </root>

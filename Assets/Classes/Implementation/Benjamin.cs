@@ -263,9 +263,23 @@ namespace Assets.Classes.Implementation
             if (CurrentState == State.DirectionalMovement)
             {
                 if (CurreDirectionalMovementMode == DirectionalMovementMode.Vertical)
-                    transform.Translate(0, DirectionalMovementVerticalVelocity * Time.deltaTime * ((CurrentDirectionalMovementDirection == DirectionalMovementDirection.Backward) ? -1 : 1), 0, Space.World);
+                {
+                    var velocity = DirectionalMovementVerticalVelocity*
+                                   ((CurrentDirectionalMovementDirection == DirectionalMovementDirection.Backward)
+                                       ? -1
+                                       : 1);
+                    var v = transform.position + Vector3.up*velocity*Time.deltaTime;
+                    rigidbody2D.MovePosition(v);
+                }
                 else
-                    transform.Translate(DirectionalMovementHorizontalVelocity * Time.deltaTime * ((CurrentDirectionalMovementDirection == DirectionalMovementDirection.Backward) ? -1 : 1), 0, 0, Space.World);
+                {
+                    var velocity = DirectionalMovementHorizontalVelocity *
+                            ((CurrentDirectionalMovementDirection == DirectionalMovementDirection.Backward)
+                                        ? -1
+                                        : 1);
+                    var v = transform.position + Vector3.right  * velocity * Time.deltaTime;
+                    rigidbody2D.MovePosition(v);
+                }
             }
         }
 
@@ -532,7 +546,8 @@ namespace Assets.Classes.Implementation
 
         public void DisableTail(bool alsoReset = true)
         {
-            currentTailTrail.enabled = false;
+            if(currentTailTrail != null)
+                currentTailTrail.enabled = false;
         }
 
         public void EnableTail()
@@ -594,7 +609,7 @@ namespace Assets.Classes.Implementation
             {
                 GameMessenger.Broadcast(ScoreLineCrossedEventName, c, scoreLine);
             }
-            if (c.gameObject.CompareTag(Obstacle.Tag) && !(Godmode.IsGodmodeEnabled))
+            if (c.gameObject.CompareTag(Obstacle.Tag) && !(Godmode.IsGodmodeEnabled) && c.gameObject.transform.localScale.x != 0)
             {
                 var o = c.gameObject.GetComponent<Obstacle>();
                 if (o != null)

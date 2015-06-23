@@ -63,13 +63,15 @@ namespace Assets.Classes.Implementation
 
         public void PlaySingle(AudioClip clip, ClipType type)
         {
-            return;
+            if(clip == null)
+                return;
+            //return;
             if (IsMuted)
                 return;
             //var s = GetSourceByClipType(type);
             //s.clip = clip;
             //s.Play();
-            AudioSource.PlayClipAtPoint(clip, GameCamera.Instance.Camera.transform.position);
+            AudioSource.PlayClipAtPoint(clip, GameCamera.Instance.Camera.transform.position, 0.2f);
         }
 
         public AudioClip TeleportationClip;

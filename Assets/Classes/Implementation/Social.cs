@@ -90,7 +90,7 @@ namespace Assets.Classes.Implementation
 
         public void Rate()
         {
-            IOSNativeUtility.RedirectToAppStoreRatingPage();
+            Application.OpenURL(GameExternals.AppStoreURL);
         }
 
 

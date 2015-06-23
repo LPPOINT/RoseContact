@@ -6,7 +6,9 @@ namespace Assets.Classes.Implementation.UI
 {
     public class UIMainMenuBestScoreText : RoseEntity
     {
-        private void Start()
+
+
+        public void UpdateBestScoreText()
         {
             var t = GetComponent<Text>();
             t.text = string.Format(LanguageManager.Instance.GetTextValue("MainMenu.BestScore"), Game.ImplementationInstance.HighScore);

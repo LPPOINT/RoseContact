@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using AdvancedInspector;
 using Assets.Classes.Core;
 using Assets.Classes.Foundation.Classes;
 using Assets.Classes.Foundation.Extensions;
 using DG.Tweening;
 using DG.Tweening.Plugins.Options;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -15,6 +19,7 @@ using UnityEngine.UI;
 namespace Assets.Classes.Implementation
 {
 
+    [AdvancedInspector(true)]
     public class Gameplay : GameState<Gameplay>
     {
 
@@ -25,6 +30,35 @@ namespace Assets.Classes.Implementation
         }
 
         public GameplayMode CurrentMode { get; private set; }
+
+        #region Editor
+
+#if UNITY_EDITOR
+
+        [Inspect, Method(MethodDisplay.Button)]
+        public void PopulateChunkPrefabsList()
+        {
+            ChunksPrefabs.Clear();
+            var prefabs = AssetDatabase.LoadAllAssetsAtPath("Assets//Prefabs//Chunks//");
+            Debug.Log("Count: " + prefabs.Count());
+            foreach (var prefab in prefabs)
+            {
+                if (prefab is GameObject)
+                {
+                    var go = prefab as GameObject;
+                    var chunk = go.GetComponent<Chunk>();
+                    if (chunk != null && !chunk.name.Contains("Initial"))
+                    {
+                        ChunksPrefabs.Add(chunk);
+                    }
+                }
+            }
+            EditorUtility.SetDirty(this);
+        }
+
+#endif
+
+        #endregion
 
         #region UI
 
@@ -153,6 +187,9 @@ namespace Assets.Classes.Implementation
         {
             TweenUI(UIScorePanel.rectTransform, from, to, time, delay, ease, () => ScorePanelShowState = startState, () => ScorePanelShowState = resultState);
         }
+
+        private bool isTapToPlayShowedInThisRun;
+
         public void ShowScorePanel()
         {
 
@@ -170,10 +207,37 @@ namespace Assets.Classes.Implementation
         }
         public void ShowTapToPlay()
         {
+            if (isTapToPlayShowedInThisRun)
+            {
+                Debug.LogWarning("Tap to play panel already showed in this run.");
+                return;
+            }
+            isTapToPlayShowedInThisRun = true;
+
             UITapToPlay.gameObject.SetActive(true);
             UITapToPlay.rectTransform.localScale = tapToPlayInitialScale;
-            TweenTapToPlay(TapToPlayHided, TapToPlayShowed, TapToPlayShowTime, 0, TapToPlayShowEase, ShowState.Showing, ShowState.Showed);
+            UITapToPlay.transform.position = TapToPlayShowed.transform.position;
+            TapToPlayShowState = ShowState.Showed;
         }
+
+
+        public IEnumerator ShowTapToPlayFreezeSafe()
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            if (isTapToPlayShowedInThisRun)
+            {
+                Debug.LogWarning("Tap to play panel already showed in this run.");
+                yield return null;
+            }
+            isTapToPlayShowedInThisRun = true;
+
+            UITapToPlay.gameObject.SetActive(true);
+            UITapToPlay.rectTransform.localScale = tapToPlayInitialScale;
+            UITapToPlay.transform.position = TapToPlayShowed.transform.position;
+            TapToPlayShowState = ShowState.Showed;
+        }
+
         public void HideTapToPlay()
         {
             UITapToPlay.rectTransform.DOScale(new Vector3(0, 0, UITapToPlay.rectTransform.localScale.z),
@@ -287,8 +351,16 @@ namespace Assets.Classes.Implementation
 
         public bool IsTopChunkFullyVisibly(float margin)
         {
+            
             if (TopChunk == null) return false;
-            return TopChunk.TopMiddle.y < GameCamera.Instance.Viewport.yMax - margin;
+            if (CurrentMode == GameplayMode.Demo)
+            {
+                return TopChunk.TopMiddle.y < GameCamera.Instance.Viewport.yMax - margin;
+            }
+            else
+            {
+                return TopChunk.TopMiddle.y < GameCamera.Instance.Viewport.y + GameCamera.Instance.Viewport.height;
+            }
         }
         public bool IsBottomChunkFullyInvisibly(float margin)
         {
@@ -346,6 +418,12 @@ namespace Assets.Classes.Implementation
 #if UNITY_EDITOR
             newInstance.gameObject.name += "(Active)";
 #endif
+
+            if (newInstance.name == "Chunk64" && Game.ImplementationInstance.HighScore < 4) // Новые игроки не должны это видеть
+            {
+                return GetNextRandomChunkInstance(false);
+            }
+
             return newInstance;
         }
         public Chunk GetNextRandomChunkPrefab()
@@ -457,11 +535,36 @@ namespace Assets.Classes.Implementation
 
         #region Input
 
-        public const string PlayerGotInputEventName = "PlayerGotInput";
+        public const string PlayerGotInputPartiallyEventName = "PlayerPartiallyGotInput";
+        public const string PlayerGotInputFullyEventName = "PlayerFullyPartiallyGotInput";
+
+        public float InputLockTime;
+
+        public bool IsInputLocked { get; private set; }
+
+        private void UnlockInputDelayed(Action inputUnlockedAction)
+        {
+            StartCoroutine(UnlockInputDelayedCoroutine(inputUnlockedAction));
+            IsInputLocked = true;
+            Invoke("UnlockInput", InputLockTime);
+        }
+
+        private IEnumerator UnlockInputDelayedCoroutine(Action inputUnlockedAction)
+        {
+            yield return new WaitForSeconds(InputLockTime);
+
+            UnlockInput();
+            if (inputUnlockedAction != null) inputUnlockedAction();
+        }
+
+        private void UnlockInput()
+        {
+            IsInputLocked = false;
+        }
 
         private bool IsValidGameplayTap(FingerDownEvent g)
         {
-            return IsEnabled && !IsPointerOverPauseButton(g) && !IsPaused;
+            return IsEnabled && !IsPointerOverPauseButton(g) && !IsPaused && !IsInputLocked;
                 // && (Benjamin.Instance.CurrentState == Benjamin.State.ControlledByPlayer || Benjamin.Instance.CurrentState == Benjamin.State.DirectionalMovement || Benjamin.Instance.CurrentState == Benjamin.State.Standing);
         }
 
@@ -474,7 +577,6 @@ namespace Assets.Classes.Implementation
         private void OnFingerDown(FingerDownEvent g)
         {
 
-            PausePopupHandleFingerDown(g);
 
             if (!IsValidGameplayTap(g))
                 return;
@@ -483,11 +585,14 @@ namespace Assets.Classes.Implementation
 
             if (Benjamin.Instance.CurrentState == Benjamin.State.Standing && TapToPlayShowState == ShowState.Showed)
             {
+                GameplayStartYPosition = GameCamera.Instance.transform.position.y;
+
                 Benjamin.Instance.StartDirectionalMovement(Benjamin.DirectionalMovementMode.Vertical, Benjamin.DirectionalMovementDirection.Forward);
                 HideTapToPlay();
                 ShowScorePanel();
                 ShowPauseButton();
-                GameMessenger.Broadcast(PlayerGotInputEventName);
+                GameMessenger.Broadcast(PlayerGotInputPartiallyEventName);
+                UnlockInputDelayed(() => GameMessenger.Broadcast(PlayerGotInputFullyEventName));
             }
             else if (Benjamin.Instance.CurrentState == Benjamin.State.DirectionalMovement)
             {
@@ -512,7 +617,7 @@ namespace Assets.Classes.Implementation
         }
         private void OnFingerUp(FingerUpEvent g)
         {
-            PausePopupHandleFingerUp(g);
+
             IsFingerDown = false;
             GameMessenger.Broadcast(FingerUpEventName, g);
         }
@@ -665,23 +770,6 @@ namespace Assets.Classes.Implementation
 
         }
 
-        private void PausePopupHandleFingerDown(FingerDownEvent e)
-        {
-            if(!IsPaused || isPausing || isResuming)return;
-            var raycast = RaycastWithCurrentPointerEventData(UIPausePopup.canvas.gameObject.GetComponent<GraphicRaycaster>());
-            if (raycast != null && raycast.Any(result => result.gameObject.Equals(UIPausePopupEye.gameObject)))
-            {
-                SetPausePopupTransparent(true);
-            }
-        }
-        private void PausePopupHandleFingerUp(FingerUpEvent e)
-        {
-            if (!IsPaused || isPausing || isResuming) return;
-            if (IsPausePopupTransparent)
-            {
-                SetPausePopupTransparent(false);
-            }
-        }
 
         private void ShowPausePopup()
         {
@@ -689,15 +777,15 @@ namespace Assets.Classes.Implementation
             UIPausePopup.color = new Color(UIPausePopup.color.r, UIPausePopup.color.g, UIPausePopup.color.b, 0);
             UIPausePopup.DOFade(defaultPausePopupAlpha, 0.3f).SetUpdate(true);
             TweenUI(UIPauseTapToResume, PauseTapToResumeHided, PauseTapToResumeShowed, PauseTapToResumeShowTime, 0, PauseTapToResumeShowEase, null, OnPausePopupShowed);
-            TweenUI(UIPauseHold, PauseHoldHided, PauseHoldShowed, PauseHoldShowTime, 0, PauseHoldShowEase, null, null);
+           // TweenUI(UIPauseHold, PauseHoldHided, PauseHoldShowed, PauseHoldShowTime, 0, PauseHoldShowEase, null, null);
         }
         private void HidePausePopup()
         {
 
             UIPausePopup.color = new Color(UIPausePopup.color.r, UIPausePopup.color.g, UIPausePopup.color.b, defaultPausePopupAlpha);
             UIPausePopup.DOFade(0, 0.3f).SetUpdate(true);
-            TweenUI(UIPauseTapToResume, PauseTapToResumeShowed, PauseTapToResumeHided, PauseTapToResumeHideTime, 0, PauseTapToResumeHideEase, null, null);
-            TweenUI(UIPauseHold, PauseHoldShowed, PauseHoldHided, PauseHoldHideTime, 0, PauseHoldHideEase, null, OnPausePopupHided);
+            TweenUI(UIPauseTapToResume, PauseTapToResumeShowed, PauseTapToResumeHided, PauseTapToResumeHideTime, 0, PauseTapToResumeHideEase, null, OnPausePopupHided);
+           // TweenUI(UIPauseHold, PauseHoldShowed, PauseHoldHided, PauseHoldHideTime, 0, PauseHoldHideEase, null, OnPausePopupHided);
         }
 
         private void OnPausePopupHided()
@@ -717,7 +805,7 @@ namespace Assets.Classes.Implementation
         {
             UIPausePopup.color = new Color(UIPausePopup.color.r, UIPausePopup.color.g, UIPausePopup.color.b, 0);
             UIPauseTapToResume.transform.position = PauseTapToResumeHided.transform.position;
-            UIPauseHold.transform.position = PauseHoldHided.transform.position;
+           // UIPauseHold.transform.position = PauseHoldHided.transform.position;
         }
 
         #endregion
@@ -739,7 +827,16 @@ namespace Assets.Classes.Implementation
 
         public void StartRun()
         {
+            isTapToPlayShowedInThisRun = false;
             EnablePhysics();
+
+            if (CurrentTranslationContext == GameplayTranslationContext.FromMainMenu)
+            {
+                GameCamera.ImplementationInstance.SetNextColorTranslationAnimateable(false);
+            }
+
+            ColorThemes.Instance.ChangeColorTheme();
+
             if (ActiveChunks.Any())
             {
                 DestroyAllActiveChunksInBackground();
@@ -753,9 +850,12 @@ namespace Assets.Classes.Implementation
             CurrentMode = GameplayMode.Play;
 
             InitializeScore();
-            ShowTapToPlay();
+            StartCoroutine(ShowTapToPlayFreezeSafe());
 
+
+            
         }
+
 
         private void OnBenDied()
         {
@@ -767,6 +867,7 @@ namespace Assets.Classes.Implementation
             HideScorePanel();
             HidePauseButton();
             CancelQueueDestroyBottomChunk();
+          //  GameSound.Instance.PlayCrash();
             Game.ImplementationInstance.ProcessScore(CurrentScore);
             StartCoroutine(OnBenDiedDelayed());
         }
@@ -878,8 +979,6 @@ namespace Assets.Classes.Implementation
         {
             PreloadIfNeeded();
 
-            GameplayStartYPosition = GameCamera.Instance.transform.position.y;
-
             if (model == null || (model is GameplayTranslationContext && (GameplayTranslationContext)model == GameplayTranslationContext.FromMainMenu))
             {
                 CurrentTranslationContext = GameplayTranslationContext.FromMainMenu;
@@ -898,7 +997,6 @@ namespace Assets.Classes.Implementation
             }
             else
             {
-                ColorThemes.Instance.ChangeColorTheme();
                 Benjamin.Instance.Show();
                 GameCamera.Instance.InvalidateViewport();
                 StartRun();

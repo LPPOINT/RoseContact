@@ -8,7 +8,9 @@ namespace SmartLocalization.Editor{
 	public class LocalizedText : MonoBehaviour {
 		public string localizedKey = "INSERT_KEY_HERE";
 		Text textObject;
-		
+
+	    public bool ForceUpper;
+
 		void Start () {
 			textObject = this.GetComponent<Text>();
 		
@@ -28,6 +30,10 @@ namespace SmartLocalization.Editor{
 		
 		void OnChangeLanguage(LanguageManager thisLanguageManager){
 			textObject.text = LanguageManager.Instance.GetTextValue(localizedKey);
+		    if (ForceUpper)
+		    {
+		        textObject.text = textObject.text.ToUpper();
+		    }
 		}
 	}
 }

@@ -28,9 +28,9 @@ GameObject:
   - 58: {fileID: 5842544}
   - 50: {fileID: 5081508}
   - 114: {fileID: 11488374}
-  - 114: {fileID: 11479178}
+  - 114: {fileID: 11435878}
   m_Layer: 0
-  m_Name: ObstacleWithImage 4
+  m_Name: A
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,9 +48,9 @@ GameObject:
   - 58: {fileID: 5805720}
   - 50: {fileID: 5046630}
   - 114: {fileID: 11471292}
-  - 114: {fileID: 11460718}
+  - 114: {fileID: 11424744}
   m_Layer: 0
-  m_Name: ObstacleWithImage 3
+  m_Name: A
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,6 @@ GameObject:
   - 58: {fileID: 5884436}
   - 50: {fileID: 5090970}
   - 114: {fileID: 11499312}
-  - 114: {fileID: 11431762}
   m_Layer: 0
   m_Name: ObstacleWithImage 2
   m_TagString: Obstacle
@@ -207,9 +206,9 @@ GameObject:
   - 58: {fileID: 5892084}
   - 50: {fileID: 5025414}
   - 114: {fileID: 11478090}
-  - 114: {fileID: 11440254}
+  - 114: {fileID: 11436656}
   m_Layer: 0
-  m_Name: ObstacleWithImage
+  m_Name: A
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +274,6 @@ GameObject:
   - 58: {fileID: 5850200}
   - 50: {fileID: 5069140}
   - 114: {fileID: 11426012}
-  - 114: {fileID: 11479422}
   m_Layer: 0
   m_Name: ObstacleWithImage 1
   m_TagString: Obstacle
@@ -332,7 +330,6 @@ GameObject:
   - 58: {fileID: 5841018}
   - 50: {fileID: 5000318}
   - 114: {fileID: 11408954}
-  - 114: {fileID: 11427222}
   m_Layer: 0
   m_Name: ObstacleWithImage 6
   m_TagString: Obstacle
@@ -352,7 +349,6 @@ GameObject:
   - 58: {fileID: 5851842}
   - 50: {fileID: 5038366}
   - 114: {fileID: 11458506}
-  - 114: {fileID: 11446278}
   m_Layer: 0
   m_Name: ObstacleWithImage 5
   m_TagString: Obstacle
@@ -427,7 +423,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.67052829, y: -9.31763458, z: 0}
+  m_LocalPosition: {x: 363.416473, y: -85.5679626, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459130}
@@ -932,6 +928,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!114 &11424744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37dd974ed334da441b640cc5405a16eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0
+  Trigger: {fileID: 11433258}
+  To: 0
+  Time: .5
+  Ease: 26
+  Loops: 1
+  LoopType: 0
+  IsRelative: 0
 --- !u!114 &11426012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -943,25 +958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9cf96c49572a0146b5fe271e55a409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11427222
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c90c7865cddaa4e99417b47f3ed072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Delay: 0
-  Trigger: {fileID: 0}
-  MoveToTarget: {fileID: 0}
-  TimeOrSpeed: 4
-  IsSpeedBased: 0
-  Ease: 1
-  LoopType: 1
-  Loops: -1
 --- !u!114 &11428174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -983,25 +979,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11431762
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c90c7865cddaa4e99417b47f3ed072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Delay: 0
-  Trigger: {fileID: 0}
-  MoveToTarget: {fileID: 0}
-  TimeOrSpeed: 4
-  IsSpeedBased: 0
-  Ease: 1
-  LoopType: 1
-  Loops: -1
 --- !u!114 &11433258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1013,7 +990,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1eeacaa5241d749ad0637532a87d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11440254
+--- !u!114 &11435878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37dd974ed334da441b640cc5405a16eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0
+  Trigger: {fileID: 11433258}
+  To: 0
+  Time: .5
+  Ease: 26
+  Loops: 1
+  LoopType: 0
+  IsRelative: 0
+--- !u!114 &11436656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1021,17 +1017,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 170246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c90c7865cddaa4e99417b47f3ed072, type: 3}
+  m_Script: {fileID: 11500000, guid: 37dd974ed334da441b640cc5405a16eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Delay: 0
-  Trigger: {fileID: 0}
-  MoveToTarget: {fileID: 0}
-  TimeOrSpeed: 4
-  IsSpeedBased: 0
-  Ease: 1
-  LoopType: 1
-  Loops: -1
+  Trigger: {fileID: 11433258}
+  To: 0
+  Time: .5
+  Ease: 26
+  Loops: 1
+  LoopType: 0
+  IsRelative: 0
 --- !u!114 &11442998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1053,25 +1049,6 @@ MonoBehaviour:
   LineType: 0
   AlphaTime: .300000012
   UIPlusOne: {fileID: 11428174}
---- !u!114 &11446278
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c90c7865cddaa4e99417b47f3ed072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Delay: 0
-  Trigger: {fileID: 0}
-  MoveToTarget: {fileID: 0}
-  TimeOrSpeed: 4
-  IsSpeedBased: 0
-  Ease: 1
-  LoopType: 1
-  Loops: -1
 --- !u!114 &11458506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1083,25 +1060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9cf96c49572a0146b5fe271e55a409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11460718
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c90c7865cddaa4e99417b47f3ed072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Delay: 0
-  Trigger: {fileID: 0}
-  MoveToTarget: {fileID: 0}
-  TimeOrSpeed: 4
-  IsSpeedBased: 0
-  Ease: 1
-  LoopType: 1
-  Loops: -1
 --- !u!114 &11465420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1164,44 +1122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9cf96c49572a0146b5fe271e55a409c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11479178
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c90c7865cddaa4e99417b47f3ed072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Delay: 0
-  Trigger: {fileID: 0}
-  MoveToTarget: {fileID: 0}
-  TimeOrSpeed: 4
-  IsSpeedBased: 0
-  Ease: 1
-  LoopType: 1
-  Loops: -1
---- !u!114 &11479422
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c90c7865cddaa4e99417b47f3ed072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Delay: 0
-  Trigger: {fileID: 0}
-  MoveToTarget: {fileID: 0}
-  TimeOrSpeed: 4
-  IsSpeedBased: 0
-  Ease: 1
-  LoopType: 1
-  Loops: -1
 --- !u!114 &11487592
 MonoBehaviour:
   m_ObjectHideFlags: 1

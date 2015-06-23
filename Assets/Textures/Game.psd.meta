@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f494407987f8e764f9bbc5baea91f416
-timeCreated: 1429806316
+timeCreated: 1433180127
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -23,10 +23,12 @@ TextureImporter:
     21300032: symbol_4
     21300034: arrow
     21300036: score_line
+    21300038: trol
+    21300040: player2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -72,19 +74,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 38
-        y: 1196
-        width: 771
-        height: 808
+        y: 1237
+        width: 753
+        height: 767
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Game_1
       rect:
         serializedVersion: 2
-        x: 1035
+        x: 1034
         y: 1422
-        width: 271
-        height: 268
+        width: 272
+        height: 269
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -101,10 +103,10 @@ TextureImporter:
     - name: plus_one
       rect:
         serializedVersion: 2
-        x: 1727
-        y: 1835
-        width: 171
-        height: 170
+        x: 1722
+        y: 1834
+        width: 176
+        height: 173
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,6 +177,16 @@ TextureImporter:
         y: 1743
         width: 373
         height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trol
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 911
+        width: 445
+        height: 362
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

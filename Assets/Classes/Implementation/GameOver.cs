@@ -75,6 +75,9 @@ namespace Assets.Classes.Implementation
 
         #region Tween show/hide
 
+        public const string PopupShowedEventName = "GOPopupShowed";
+        public const string PopupHidedEventName = "GOPopupHided";
+
         public RectTransform TweenTarget;
 
         public RectTransform HidedPosition;
@@ -200,11 +203,12 @@ namespace Assets.Classes.Implementation
             {
                 hidedAction();
             }
+            GameMessenger.Broadcast(PopupHidedEventName);
         }
 
         public void OnPopupShowed()
         {
-            
+            GameMessenger.Broadcast(PopupShowedEventName);
         }
 
         public IEnumerator ShowBannerIfNeededDelayed()

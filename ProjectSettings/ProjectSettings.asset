@@ -10,12 +10,13 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetIOSGraphics: -1
   targetResolution: 0
-  accelerometerFrequency: 60
+  accelerometerFrequency: 0
   companyName: Rose Development
-  productName: RoseContact
+  productName: Trajectory Control
   cloudProjectId: 
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
+  m_ShowUnitySplashScreen: 1
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
@@ -75,7 +76,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.rose.contact
-  bundleVersion: 0.2.7.95
+  bundleVersion: 1.3.2
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
@@ -95,38 +96,39 @@ PlayerSettings:
   preloadShaders: 0
   StripUnusedMeshComponents: 0
   iPhoneSdkVersion: 988
-  iPhoneTargetOSVersion: 30
+  iPhoneTargetOSVersion: 22
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
-  iPhoneSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1, type: 3}
-  iPhoneHighResSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPhoneSplashScreen: {fileID: 2800000, guid: 3374e9f63e78c0549b34adb45f05ad0e, type: 3}
+  iPhoneHighResSplashScreen: {fileID: 2800000, guid: 322933a695461e44dba39cd602f15f93,
     type: 3}
-  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: 728dfb8cd639f6944b7f71b229505fcd,
     type: 3}
-  iPhone47inSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPhone47inSplashScreen: {fileID: 2800000, guid: b75715ffe867636429985278b2fcbcdb,
     type: 3}
-  iPhone55inPortraitSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPhone55inPortraitSplashScreen: {fileID: 2800000, guid: 5bb2080428b4ed245965e5dc4510f895,
     type: 3}
-  iPhone55inLandscapeSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPhone55inLandscapeSplashScreen: {fileID: 2800000, guid: 5bb2080428b4ed245965e5dc4510f895,
     type: 3}
-  iPadPortraitSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPadPortraitSplashScreen: {fileID: 2800000, guid: 1313961a291e0e24b83100ee08875b03,
     type: 3}
-  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: 1313961a291e0e24b83100ee08875b03,
     type: 3}
-  iPadLandscapeSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPadLandscapeSplashScreen: {fileID: 2800000, guid: 1313961a291e0e24b83100ee08875b03,
     type: 3}
-  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: e6a5dd1563de42e47a14e6c32a7097f1,
+  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: 1313961a291e0e24b83100ee08875b03,
     type: 3}
-  iOSLaunchScreenType: 0
+  iOSLaunchScreenType: 3
   iOSLaunchScreenPortrait: {fileID: 0}
   iOSLaunchScreenLandscape: {fileID: 0}
   iOSLaunchScreenBackgroundColor:
     serializedVersion: 2
     rgba: 0
   iOSLaunchScreenFillPct: 1
+  iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
@@ -139,6 +141,7 @@ PlayerSettings:
   - width: 320
     height: 180
     banner: {fileID: 0}
+  androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:
   - m_BuildTarget: 
@@ -147,21 +150,21 @@ PlayerSettings:
       m_Size: 128
   - m_BuildTarget: iPhone
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 4fa27e68ff8cdb74f939b254c4fcfd7d, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 053b69ccef557bc4fb841b73e2eb1b4a, type: 3}
       m_Size: 180
-    - m_Icon: {fileID: 2800000, guid: 7b6d41f7e8bb48545b58fd8d2e18d359, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 332797bee168a744fa35bdf0a7b77840, type: 3}
       m_Size: 152
-    - m_Icon: {fileID: 2800000, guid: 5a611e5a7c85ccc4ca5aa81ee60119f4, type: 3}
+    - m_Icon: {fileID: 2800000, guid: d337d65c04f12ad498c16875c64c32c9, type: 3}
       m_Size: 144
-    - m_Icon: {fileID: 2800000, guid: 2fbce7ab30a3134409e5cf1445986273, type: 3}
+    - m_Icon: {fileID: 2800000, guid: a33524bdbcf4c9f4ba0da32992cce793, type: 3}
       m_Size: 120
-    - m_Icon: {fileID: 2800000, guid: 5a611e5a7c85ccc4ca5aa81ee60119f4, type: 3}
+    - m_Icon: {fileID: 2800000, guid: d2ac53e8c04e86b4c95d86d33e7ffb0c, type: 3}
       m_Size: 114
-    - m_Icon: {fileID: 2800000, guid: 50996f34052a0424cb1ca83dceca744e, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 1a92b8d2a83687940870a88090751831, type: 3}
       m_Size: 76
-    - m_Icon: {fileID: 2800000, guid: 5213fabede7b3d040869fc82b3e45c1f, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 98d63e66db2734d4c8f61f9e72583475, type: 3}
       m_Size: 72
-    - m_Icon: {fileID: 2800000, guid: 2b91e036f1dca6741b41b7dea11377b1, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 07a62b5d188a18e4aa0bb94fe089eb86, type: 3}
       m_Size: 57
   m_BuildTargetBatching:
   - m_BuildTarget: iPhone

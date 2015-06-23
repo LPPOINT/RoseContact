@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &127686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 492388}
+  - 114: {fileID: 11415580}
+  - 114: {fileID: 11407094}
+  - 114: {fileID: 11477648}
+  m_Layer: 0
+  m_Name: Gameplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &139314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 470076}
+  m_Layer: 0
+  m_Name: Top
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &470076
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.89999998, y: 96.3000031, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492388}
+  m_RootOrder: 0
+--- !u!4 &492388
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.05041814, y: 1.49828517, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 470076}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11407094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c71470e58dece45a990c1eaafbd474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FingerIndexFilter: -1
+  Raycaster: {fileID: 0}
+  UseSendMessage: 1
+  SendMessageToSelection: 1
+  MessageTarget: {fileID: 0}
+  MessageName: OnFingerDown
+--- !u!114 &11415580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f0fdd0679fcba46943888bb2e374d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UICanvas: {fileID: 0}
+  UIScorePanel: {fileID: 0}
+  UIScoreText: {fileID: 0}
+  UIScoreAnimator: {fileID: 0}
+  UITapToPlay: {fileID: 0}
+  TapToPlayHided: {fileID: 0}
+  TapToPlayShowed: {fileID: 0}
+  TapToPlayShowTime: .5
+  TapToPlayShowEase: 27
+  TapToPlayHideTime: .300000012
+  TapToPlayHideEase: 26
+  ScorePanelHided: {fileID: 0}
+  ScorePanelShowed: {fileID: 0}
+  ScorePanelShowTime: .5
+  ScorePanelShowEase: 27
+  ScorePanelHideTime: .600000024
+  ScorePanelHideEase: 26
+  ScorePanelNumberScaleTrigger: NumberScale
+  ChunksPrefabs:
+  - {fileID: 11496354, guid: d5fd0ec0c7fae3d44a39425dbdff19b8, type: 2}
+  - {fileID: 11427404, guid: 91cc1b22c73238546852120408557f19, type: 2}
+  - {fileID: 11444908, guid: 976cdea37c8facf41b29fa40a7511a03, type: 2}
+  - {fileID: 11408744, guid: 57fdba5e1b8624045a243104528278b1, type: 2}
+  - {fileID: 11440556, guid: 6954ceb25b2218f449de708f50c10051, type: 2}
+  - {fileID: 11485522, guid: 193f5ceab6a0445428450e41253ff910, type: 2}
+  - {fileID: 11485522, guid: 52ae9d5c48af61244ab8717a60b81797, type: 2}
+  - {fileID: 11485522, guid: 864c8c12a56ee964694c9bf26e8983e5, type: 2}
+  - {fileID: 11485522, guid: ef8f37ba4a4213744a3d52840fab8b1b, type: 2}
+  - {fileID: 11485522, guid: 69ebc8d3fbf427445a3e12014ef7a043, type: 2}
+  - {fileID: 11485522, guid: 4fd75d77c9de693469385f02af7a7838, type: 2}
+  - {fileID: 11485522, guid: 583a49b794354044199d5cc96c480c08, type: 2}
+  - {fileID: 11485522, guid: 54b49b38f245e1942b2e9c4073df3538, type: 2}
+  - {fileID: 11485522, guid: f18d9115909c2104eae35e090f8dcd0d, type: 2}
+  - {fileID: 11485522, guid: e90f6b6b7cb64c845a1d151d4d9c9efe, type: 2}
+  - {fileID: 11485522, guid: e8ac665a766d49043a26031cdf285812, type: 2}
+  - {fileID: 11485522, guid: 83797f95d21ed594ab2ed60fddea2af0, type: 2}
+  - {fileID: 11485522, guid: 4d4c5bc097eefb84db9c20ce39303879, type: 2}
+  - {fileID: 11485522, guid: f2cad455f245b0a46a6e7d1717df46d9, type: 2}
+  - {fileID: 11445890, guid: 235d39c9c8491514faef51c0360c706f, type: 2}
+  - {fileID: 11451406, guid: aef6fc96d17e63b4aa8790338ed4f6c9, type: 2}
+  - {fileID: 11451406, guid: db51f438513af6443a130d6be6f464a6, type: 2}
+  - {fileID: 11451406, guid: 4098d5f695d305d45a4dd40ee2f13baf, type: 2}
+  - {fileID: 11451406, guid: e5e691ac77a47dd40b3bbf4757345a1b, type: 2}
+  - {fileID: 11451406, guid: 171351d07927cc24ca20fa955c2bcc0b, type: 2}
+  - {fileID: 11451406, guid: 21cc0c2a5a236d64ebfa73e34ea62cf9, type: 2}
+  - {fileID: 11451406, guid: ee0dd35cb1343914dad7730b248c2cd5, type: 2}
+  - {fileID: 11451406, guid: cc68df9a8322e074caae86c62312c658, type: 2}
+  - {fileID: 11451406, guid: dd26b37097660ff4aab4675873ec2434, type: 2}
+  - {fileID: 11451406, guid: 80248af058942f84e8f04fc681f80642, type: 2}
+  - {fileID: 11451406, guid: 0cc4a993bc5197f46a3701db86ef8379, type: 2}
+  - {fileID: 11451406, guid: 0738f6084518e2d40a4b1facdfd9e8b3, type: 2}
+  - {fileID: 11451406, guid: fa85be2441e8bca46a66e227974671f7, type: 2}
+  - {fileID: 11451406, guid: 6b52ea7633e6ac14b9ea3d2f0cf96f01, type: 2}
+  - {fileID: 11451406, guid: 427e8d771d396b44083ff951263ce06b, type: 2}
+  - {fileID: 11451406, guid: 404b890cda71c104db8682e7b077c534, type: 2}
+  - {fileID: 11451406, guid: 1d31fcc5a365a7c458eb7ec71eac7ad9, type: 2}
+  - {fileID: 11451406, guid: b42bb4147df862f48aa8015f30cfb131, type: 2}
+  - {fileID: 11451406, guid: 2362918f73f5eff419504ad5dcb5785e, type: 2}
+  - {fileID: 11451406, guid: 5bddf576da46f8d4595656335a2ab65e, type: 2}
+  - {fileID: 11451406, guid: 221cf7a451482424e9e847819c13ec1e, type: 2}
+  - {fileID: 11451406, guid: 6cc5cc93ede591a47a67b59f971d842e, type: 2}
+  - {fileID: 11451406, guid: f7b07aa4631e61344a2d4bf79ade12cf, type: 2}
+  - {fileID: 11451406, guid: 2119f1e7c855e2348bae721e881dec5d, type: 2}
+  - {fileID: 11451406, guid: 5d62a76525f803f4d921bd775bff2d44, type: 2}
+  - {fileID: 11451406, guid: 95bdb75c4438c944187bee23465e9d5f, type: 2}
+  - {fileID: 11451406, guid: a8fdbfc22697d2a459e9b1a5612c3556, type: 2}
+  - {fileID: 11451406, guid: bc3e13d850d76b54889c71d9e915311b, type: 2}
+  - {fileID: 11451406, guid: fff82c6946349c64dac13943273d70d9, type: 2}
+  - {fileID: 11451406, guid: 92b6e34d4667c7242b73416aa49ce680, type: 2}
+  - {fileID: 11451406, guid: 481d549db87bdcb4aac4b3b28f331f54, type: 2}
+  - {fileID: 11451406, guid: d6cc83cf7298aef489a057d126e3252d, type: 2}
+  - {fileID: 11451406, guid: 1e67a95f9401d874f81112de83aa249e, type: 2}
+  InitialChunksPrefabs:
+  - {fileID: 11496354, guid: 129120e44097e4b4b9753dd569eb1148, type: 2}
+  ScoreLineMaterial: {fileID: 2100000, guid: 138f54dbcab9d5f4fa87cc3ced61119c, type: 2}
+  ChunkPoolSize: 0
+  FirstChunkSpawnOffset: 0
+  ChunkToTest: {fileID: 0}
+  UIPauseTapToResume: {fileID: 0}
+  UIPauseHold: {fileID: 0}
+  PauseTapToResumeHided: {fileID: 0}
+  PauseTapToResumeShowed: {fileID: 0}
+  PauseTapToResumeShowTime: .300000012
+  PauseTapToResumeShowEase: 27
+  PauseTapToResumeHideTime: .300000012
+  PauseTapToResumeHideEase: 26
+  PauseHoldHided: {fileID: 0}
+  PauseHoldShowed: {fileID: 0}
+  PauseHoldShowTime: .300000012
+  PauseHoldShowEase: 27
+  PauseHoldHideTime: .300000012
+  PauseHoldHideEase: 26
+  UIPause: {fileID: 0}
+  UIPausePressArea: {fileID: 0}
+  UIPausePopup: {fileID: 0}
+  UIPausePopupEye: {fileID: 0}
+  GameoverDelay: 1
+  GameplayStartYPosition: 0
+--- !u!114 &11477648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4762978c2447048aacc02a04592aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FingerIndexFilter: -1
+  Raycaster: {fileID: 0}
+  UseSendMessage: 1
+  SendMessageToSelection: 1
+  MessageTarget: {fileID: 0}
+  MessageName: OnFingerUp
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 127686}
+  m_IsPrefabParent: 1

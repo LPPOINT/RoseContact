@@ -8,7 +8,7 @@ namespace Assets.Editor
     public class SubmitCountdown : EditorWindow
     {
 
-        public static DateTime SubmitDate = new DateTime(2015, 5, 2, 20, 0, 0);
+        public static DateTime SubmitDate = new DateTime(2015, 5, 5, 0, 0, 0);
 
         [MenuItem("Tools/Submit Countdown")]
         public static void Initialize()

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ade27b3a192224c4db3baea3d5a9cbac
-timeCreated: 1429990486
+timeCreated: 1430678037
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -34,10 +34,11 @@ TextureImporter:
     21300054: icon_vk
     21300056: button_capsule
     21300058: borders_tl
+    21300060: box
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -56,7 +57,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
@@ -75,7 +76,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
-  textureType: 5
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
@@ -152,9 +153,9 @@ TextureImporter:
     - name: gameover_bestscore_bg
       rect:
         serializedVersion: 2
-        x: 1065
+        x: 958
         y: 200
-        width: 1371
+        width: 1478
         height: 397
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -215,7 +216,7 @@ TextureImporter:
         x: 3549
         y: 1651
         width: 476
-        height: 421
+        height: 389
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,6 +270,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
+    - name: box
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 39
+        width: 574
+        height: 576
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 22, y: 24, z: 22, w: 24}
   spritePackingTag: 
   userData: 
   assetBundleName: 

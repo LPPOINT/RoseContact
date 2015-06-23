@@ -3,6 +3,7 @@ using System.Linq;
 using Assets.Classes.Core;
 using Assets.Classes.Implementation;
 using Parse;
+using UnityEngine;
 using UnityEngine.Cloud.Analytics;
 
 namespace Assets.Classes.Cloud
@@ -14,8 +15,9 @@ namespace Assets.Classes.Cloud
 
         protected override void Awake()
         {
+            Debug.Log("Init analytics");
             UnityAnalytics.StartSDK(GameExternals.UnityAnalyticsId);
-            ParseAnalytics.TrackAppOpenedAsync();
+            //ParseAnalytics.TrackAppOpenedAsync();
         }
 
 

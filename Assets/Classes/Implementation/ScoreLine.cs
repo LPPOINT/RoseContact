@@ -89,10 +89,11 @@ namespace Assets.Classes.Implementation
         private VectorLine line;
         private void CreateLine()
         {
-            if (LineType == Type.Linear)
+            if (LineType == Type.Linear && From != null && To != null)
             {
                 var endPoints = new Vector3[2];
 
+                
                 endPoints[0] = From.transform.position;
                 endPoints[1] = To.transform.position;
 
@@ -147,32 +148,19 @@ namespace Assets.Classes.Implementation
             IsDisposing = true;
             if(isInitiator)
                 chunk.InvalidateScoreLines(c, this);
-            DOTween.To(() => line.color, value => line.color = value, new Color(Color.green.r, Color.green.g, Color.green.b, 0), AlphaTime)
-                .OnComplete(() =>
-                            {
-                               // IsDisposing = false;
-                                Destroy(gameObject, 1);
-                            });
+            Destroy(gameObject);
+            //DOTween.To(() => line.color, value => line.color = value, new Color(line.color.r, line.color.g, line.color.b, 0), AlphaTime)
+            //    .OnComplete(() =>
+            //                {
+            //                   // IsDisposing = false;
+            //                    Destroy(gameObject, 1);
+            //                });
 
-            if (UIPlusOne != null && withPlusOneSign)
+            if (withPlusOneSign)
             {
-                
-                UIPlusOne.gameObject.SetActive(true);
-                UIPlusOne.color = new Color(UIPlusOne.color.r, UIPlusOne.color.g, UIPlusOne.color.b, 1);
-                var distance = 4f;
-                var time = 0.86f;
-                var offsetX = 0.5f;
-                var offsetY = 0.5f;
 
-                UIPlusOne.gameObject.transform.position = new Vector3(Benjamin.Instance.transform.position.x + offsetX, Benjamin.Instance.transform.position.y + offsetY, Benjamin.Instance.transform.position.z);
-                UIPlusOne.transform.DOMoveY(UIPlusOne.transform.position.y - distance, time)
-                    .SetEase(Ease.InBack);
-                UIPlusOne.DOColor(new Color(1, 1, 1, 0), 1f)
-                        .SetDelay(0.3f);
-                var s = UIPlusOne.transform.localScale;
-                UIPlusOne.transform.localScale = Vector3.zero;
-                UIPlusOne.transform.DOScale(s, 0.4f)
-                    .SetEase(Ease.OutBack);
+                var position = new Vector3(Benjamin.Instance.transform.position.x + 0.5f, Benjamin.Instance.transform.position.y +  0.5f, Benjamin.Instance.transform.position.z);
+                PlusOne.Instance.PlayAtPosition(position);
             }
 
         }
@@ -217,6 +205,13 @@ namespace Assets.Classes.Implementation
 
         private void Start()
         {
+
+            if (Gameplay.Instance.CurrentMode == Gameplay.GameplayMode.Demo)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             chunk = GetComponentInParent<Chunk>();
             if (!isLineCanvasPrepared)
                 PrepareLineCanvas();
@@ -229,18 +224,6 @@ namespace Assets.Classes.Implementation
                 transform.SetScaleX(transform.GetScaleX() * -1);
             }
 
-            if (UIPlusOne == null)
-            {
-                UIPlusOne = GetComponentInChildren<Image>();
-            }
-
-            if (UIPlusOne != null)
-            {
-                var m = 2f;
-                UIPlusOne.transform.localScale = new Vector3(UIPlusOne.transform.localScale.x * m,
-                    UIPlusOne.transform.localScale.y * m, UIPlusOne.transform.localScale.z * m);
-                UIPlusOne.gameObject.SetActive(false);
-            }
 
 
 
@@ -256,7 +239,7 @@ namespace Assets.Classes.Implementation
         {
 
 
-            if (LineType == Type.Linear && chunk.IsInViewport)
+            if (LineType == Type.Linear && chunk.IsInViewport && From != null && To != null)
             {
                 var f = From.transform.position;
                 var t = To.transform.position;

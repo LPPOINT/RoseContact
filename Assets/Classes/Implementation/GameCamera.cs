@@ -95,12 +95,14 @@ namespace Assets.Classes.Implementation
         public bool IsInDemoCinematic { get; private set; }
 
 
-        private void DemoCinematic(float velFrom, float velTo, Ease ease, float time)
+        private void DemoCinematic(float velFrom, float velTo, Ease ease, float time, float delay)
         {
             cinematicDemoVelocity = velFrom;
 
+
             DOTween.To(() => cinematicDemoVelocity, value => cinematicDemoVelocity = value, velTo, time)
                 .SetEase(ease)
+                .SetDelay(delay)
                 .OnComplete(() =>
                          {
                             IsInDemoCinematic = false;
@@ -110,14 +112,20 @@ namespace Assets.Classes.Implementation
                              IsInDemoCinematic = true;
                          });
         }
+
+        public void DemoCinematicStartDelayed()
+        {
+            DemoCinematic(0, DemoVelocity, Ease.Linear, 0.4f, 1.5f);
+        }
+
         public void DemoCinematicStart()
         {
-            DemoCinematic(0, DemoVelocity, Ease.InBack, 0.4f);
+            DemoCinematic(0, DemoVelocity, Ease.InBack, 0.4f, 0);
         }
 
         public void DemoCinematicStop()
         {
-            DemoCinematic(DemoVelocity, 0, Ease.Linear, 0.8f);
+            DemoCinematic(DemoVelocity, 0, Ease.Linear, 0.8f, 0);
         }
 
         private void UpdateDemoMovement()
@@ -134,12 +142,17 @@ namespace Assets.Classes.Implementation
 
         #region Background Color management
 
-
+        private bool isNextColorTranslationAnimateable;
 
         [Inspect]
         public float ChangeBackgroundColorTime;
         [Inspect]
         public Ease ChangeBackgroundColorEase;
+
+        public void SetNextColorTranslationAnimateable(bool animateable)
+        {
+            isNextColorTranslationAnimateable = animateable;
+        }
 
         public void ChangeBackgroundColor(Color newColor, float time, Ease ease)
         {
@@ -148,7 +161,12 @@ namespace Assets.Classes.Implementation
         }
         public void ChangeBackgroundColor(Color newColor)
         {
-            ChangeBackgroundColor(newColor, ChangeBackgroundColorTime, ChangeBackgroundColorEase);
+            if (isNextColorTranslationAnimateable)
+                ChangeBackgroundColor(newColor, ChangeBackgroundColorTime, ChangeBackgroundColorEase);
+            else
+                Camera.backgroundColor = newColor;
+
+            SetNextColorTranslationAnimateable(true);
         }
 
         private void OnColorThemeChanged()
@@ -250,6 +268,7 @@ namespace Assets.Classes.Implementation
         #region Unity callbacks
         protected override void Awake()
         {
+            SetNextColorTranslationAnimateable(true);
             AlignToDefaultPosition();
             ApplyAspectBasedOrthographicSize();
             InitializeMode();

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3b6691e5d371f37429dc00dd630a1bc3
-timeCreated: 1429892749
+timeCreated: 1430677106
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -19,10 +19,12 @@ TextureImporter:
     21300024: icon_tap_2
     21300026: pause
     21300028: eye
+    21300030: settings_thin
+    21300032: leaderboard_thin
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -41,7 +43,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
@@ -87,10 +89,10 @@ TextureImporter:
     - name: sound_enable
       rect:
         serializedVersion: 2
-        x: 885
-        y: 1739
-        width: 283
-        height: 236
+        x: 887
+        y: 1744
+        width: 281
+        height: 216
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,10 +119,10 @@ TextureImporter:
     - name: sound_disable
       rect:
         serializedVersion: 2
-        x: 883
-        y: 1485
-        width: 300
-        height: 225
+        x: 887
+        y: 1493
+        width: 281
+        height: 216
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,6 +213,26 @@ TextureImporter:
         y: 704
         width: 617
         height: 409
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: settings_thin
+      rect:
+        serializedVersion: 2
+        x: 1841
+        y: 1335
+        width: 187
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leaderboard_thin
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1342
+        width: 184
+        height: 172
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

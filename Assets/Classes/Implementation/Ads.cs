@@ -70,6 +70,17 @@ namespace Assets.Classes.Implementation
 
         private void InitializeAds()
         {
+
+            if (interstitial != null)
+            {
+                interstitial.AdClosed -= HandleInterstitialClosed;
+                interstitial.AdClosing -= HandleInterstitialClosing;
+                interstitial.AdFailedToLoad -= HandleInterstitialFailedToLoad;
+                interstitial.AdLeftApplication -= HandleInterstitialLeftApplication;
+                interstitial.AdLoaded -= HandleInterstitialLoaded;
+                interstitial.AdOpened -= HandleInterstitialOpened;
+            }
+
             interstitial = new InterstitialAd(GameExternals.AdMobInterstitialAdUnitId);
 
             interstitial.AdLoaded += HandleInterstitialLoaded;
@@ -79,21 +90,21 @@ namespace Assets.Classes.Implementation
             interstitial.AdClosed += HandleInterstitialClosed;
             interstitial.AdLeftApplication += HandleInterstitialLeftApplication;
 
+          
+
             LoadNextInterstitial();
         }
 
         private AdRequest CreateAdRequest()
         {
             return new AdRequest.Builder()
-                .AddTestDevice(AdRequest.TestDeviceSimulator)
-                .AddTestDevice(GameExternals.AdMobTestDeviceId)
                 .AddKeyword("game")
                 .AddKeyword("arcade")
                 .Build();
         }
 
 
-        public float InterstitialInterval = 120;
+        public float InterstitialInterval = 100;
 
 
         private InterstitialAd interstitial;
@@ -116,12 +127,11 @@ namespace Assets.Classes.Implementation
             {
                 if (IsNoAdsPurchased)
                     return false;
-                return interstitial.IsLoaded();
-                //if (lastInterstitialTime == null)
-                //{
-                //    return false;
-                //}
-                //return (DateTime.Now - lastInterstitialTime) > TimeSpan.FromSeconds(InterstitialInterval) && interstitial.IsLoaded();
+                if (lastInterstitialTime == null)
+                {
+                    return false;
+                }
+                return (DateTime.Now - lastInterstitialTime) > TimeSpan.FromSeconds(InterstitialInterval) && interstitial.IsLoaded();
             }
         }
         public bool ShowInterstitialIfNeeded()
@@ -139,6 +149,7 @@ namespace Assets.Classes.Implementation
 
             ShowInterstitial();
             RegisterInterstitialRequest();
+            InitializeAds();
 
             return true;
         }
@@ -169,7 +180,7 @@ namespace Assets.Classes.Implementation
 
         public void HandleInterstitialFailedToLoad(object sender, AdFailedToLoadEventArgs args)
         {
-
+            Debug.Log("AD ERROR: " + args.Message);
         }
 
         public void HandleInterstitialOpened(object sender, EventArgs args)
@@ -184,8 +195,7 @@ namespace Assets.Classes.Implementation
 
         public void HandleInterstitialClosed(object sender, EventArgs args)
         {
-            Debug.Log("!!!!!!!!!!!!!!LOAD NEXT AD!!!!!!!!!!!!!");
-            LoadNextInterstitial();
+
         }
 
         public void HandleInterstitialLeftApplication(object sender, EventArgs args)

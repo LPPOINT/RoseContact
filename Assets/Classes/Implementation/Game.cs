@@ -33,15 +33,16 @@ namespace Assets.Classes.Implementation
 
         protected override void OnGameVersionChanged(string oldVersion, string newVersion)
         {
-#if UNITY_IPHONE
-            Debug.Log("Version was changed. Score will be zeroed.");
-            Database.SetInt(HighscoreDbKey, 0);
-#endif
         }
 
         protected override void OnPostGameInitialized()
         {
-           
+            if (Database.ContainsKey("0.7Special") || Database.ContainsKey("0.6Special"))
+            {
+                Debug.Log("Deleting development player prefs.");
+                PlayerPrefs.DeleteAll();
+                PlayerPrefs.Save();
+            }
         }
 
         #region Score
